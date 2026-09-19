@@ -2,6 +2,7 @@
 
 import BackgroundEffect from '@/components/BackgroundEffect';
 import ScrollProgress from '@/components/ScrollProgress';
+import PointerEffect from '@/components/PointerEffect';
 import LeftPanel from '@/components/LeftPanel';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
@@ -15,6 +16,7 @@ export default function PortfolioPage() {
     <div className="portfolio-root">
       <ScrollProgress />
       <BackgroundEffect />
+      <PointerEffect />
 
       <div className="portfolio-layout-container">
         <LeftPanel />

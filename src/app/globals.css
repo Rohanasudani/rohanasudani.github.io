@@ -1473,3 +1473,38 @@ ul {
   border-radius: var(--radius-pill);
   color: var(--accent-cyan);
 }
+
+/* ─── Pointer Spotlight & Particle Animation ─── */
+.pointer-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 650px;
+  height: 650px;
+  margin-top: -325px;
+  margin-left: -325px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(6, 182, 212, 0.05) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  will-change: transform;
+}
+
+.pointer-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@media (pointer: coarse) {
+  .pointer-spotlight,
+  .pointer-canvas {
+    display: none !important;
+  }
+}
+

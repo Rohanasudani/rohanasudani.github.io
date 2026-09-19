@@ -18,7 +18,7 @@ import { useTypewriter } from '@/hooks/useTypewriter';
 export default function LeftPanel() {
   const sectionIds = navItems.map((item) => item.id);
   const activeSection = useActiveSection(sectionIds);
-  const typedRole = useTypewriter(roles, 90, 50, 2200);
+  const typedRole = useTypewriter(roles, 140, 70, 3500);
 
   return (
     <aside className="left-panel">
@@ -26,7 +26,7 @@ export default function LeftPanel() {
         {/* Availability Badge */}
         <div className="status-pill">
           <span className="status-ping" />
-          <span className="status-text">Available for Summer 2026 &amp; Fall Roles</span>
+          <span className="status-text">Open to Full-Time (May 2027) &amp; Summer 2026 Internships</span>
         </div>
 
         {/* Identity & Avatar */}

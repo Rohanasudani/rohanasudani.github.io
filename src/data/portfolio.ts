@@ -73,9 +73,8 @@ export const bio =
 
 /* About section — a longer personal introduction */
 export const aboutParagraphs = [
-  "I'm a Computer Science student and software engineer at the University of Arizona, specializing in AI and full-stack development. I build production systems that solve real problems — from enterprise AI evaluation infrastructure to coding agents and real estate platforms that have contributed to real revenue.",
-  "At University of Arizona ITS, I support 100+ university web properties, coordinate redesigns and cloud migrations, and QA-test releases across Drupal and WordPress. I've interned as an SDE at FitArt Health, where I shipped features for a fitness marketplace connecting members with 70+ centers and reduced bug reports by 20%. I'm currently designing mobile workflows for PawPrints, a smart-collar startup.",
-  "I'm actively seeking Summer 2026 and Fall software engineering internships and new-grad roles across full-stack development, AI infrastructure, and systems engineering. I work extensively with AI-assisted development tools including OpenAI Codex, Claude Code, and Google Antigravity.",
+  "I'm a Computer Science student at the University of Arizona with an AI minor, graduating May 2027. I care about building software that works in production — whether that's web platforms serving thousands of users, AI infrastructure with real evaluation guardrails, or developer tools with reproducible benchmarks.",
+  "I'm looking for full-time roles starting right after graduation, as well as a final summer internship during Summer 2026 or part-time/co-op opportunities. I work extensively with AI-assisted development tools including OpenAI Codex, Claude Code, and Google Antigravity.",
 ];
 
 export const location = 'Tucson, AZ';
@@ -107,18 +106,9 @@ export const socials: SocialLink[] = [
 
 export const resumeHref = '/resume-rohan-asudani.pdf';
 
-/* ─── Experience (Verbatim from .tex resume) ─── */
+/* ─── Experience (IT Web Analyst → SDE Intern → PawPrints) ─── */
 
 export const experiences: ExperienceItem[] = [
-  {
-    title: 'Mobile Software Developer',
-    company: 'PawPrints',
-    location: 'Tucson, AZ',
-    period: 'Sep. 2026 – Present',
-    bullets: [
-      'Designing owner-facing app workflows for device pairing, session capture, and sensor-data sync for a smart-collar beta.',
-    ],
-  },
   {
     title: 'IT Web Analyst',
     company: 'University of Arizona Information Technology Services',
@@ -140,6 +130,15 @@ export const experiences: ExperienceItem[] = [
       'Developed and tested app and web workflows for a fitness marketplace connecting members with 70+ centers, with attention to membership discovery and trial inquiries.',
       'Reproduced reported issues with product and engineering, then tested changes across affected app and web flows.',
       'Debugged defects and performed regression testing before releases, contributing to a 20% reduction in reported bugs.',
+    ],
+  },
+  {
+    title: 'Mobile Software Developer',
+    company: 'PawPrints',
+    location: 'Tucson, AZ',
+    period: 'Sep. 2026 – Present',
+    bullets: [
+      'Designing owner-facing app workflows for device pairing, session capture, and sensor-data sync for a smart-collar beta.',
     ],
   },
 ];
