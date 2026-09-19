@@ -1,59 +1,56 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
- * Cycles through an array of strings with a typing / deleting animation.
- * Returns the currently visible text.
+ * Robust, flicker-free typewriter hook.
+ * Types forward, stays on screen for pauseMs, deletes back, and advances to the next string.
  */
 export function useTypewriter(
   strings: string[],
-  typingSpeed = 80,
-  deletingSpeed = 40,
-  pauseMs = 2000,
+  typingSpeed = 110,
+  deletingSpeed = 50,
+  pauseMs = 3500,
 ) {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
-  const [phase, setPhase] = useState<'typing' | 'pausing' | 'deleting'>('typing');
-  const charPos = useRef(0);
-
-  const tick = useCallback(() => {
-    const current = strings[index];
-
-    if (phase === 'typing') {
-      charPos.current++;
-      setText(current.slice(0, charPos.current));
-      if (charPos.current >= current.length) {
-        setPhase('pausing');
-        return pauseMs;
-      }
-      return typingSpeed + Math.random() * 40;
-    }
-
-    if (phase === 'pausing') {
-      setPhase('deleting');
-      return 0;
-    }
-
-    // deleting
-    charPos.current--;
-    setText(current.slice(0, charPos.current));
-    if (charPos.current <= 0) {
-      setPhase('typing');
-      setIndex((i) => (i + 1) % strings.length);
-      return 300;
-    }
-    return deletingSpeed;
-  }, [index, phase, strings, typingSpeed, deletingSpeed, pauseMs]);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const delay = tick();
-    const timer = setTimeout(() => {
-      // Force a state update to trigger the next tick
-      setPhase((p) => p);
-    }, delay);
+    if (!strings || strings.length === 0) return;
+
+    const current = strings[index];
+    let timer: NodeJS.Timeout;
+
+    if (!isDeleting) {
+      if (text.length < current.length) {
+        // Type the next character
+        timer = setTimeout(() => {
+          setText(current.slice(0, text.length + 1));
+        }, typingSpeed);
+      } else {
+        // FULL STRING DISPLAYED — Stay steady and readable for pauseMs (3.5s)!
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseMs);
+      }
+    } else {
+      if (text.length > 0) {
+        // Delete backward
+        timer = setTimeout(() => {
+          setText(current.slice(0, text.length - 1));
+        }, deletingSpeed);
+      } else {
+        // Finished deleting — wait a brief moment, then advance to next string
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setIndex((prev) => (prev + 1) % strings.length);
+        }, 300);
+      }
+    }
+
     return () => clearTimeout(timer);
-  }, [tick, text, phase, index]);
+  }, [text, isDeleting, index, strings, typingSpeed, deletingSpeed, pauseMs]);
 
   return text;
 }

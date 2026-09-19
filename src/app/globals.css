@@ -1508,3 +1508,52 @@ ul {
   }
 }
 
+/* ─── Interactive Card Spotlight Reflection ─── */
+.project-feature-card,
+.experience-card,
+.contact-container-card,
+.about-card,
+.metric-card,
+.education-card {
+  position: relative;
+}
+
+.project-feature-card::before,
+.experience-card::before,
+.contact-container-card::before,
+.about-card::before,
+.education-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    450px circle at var(--card-mouse-x, -500px) var(--card-mouse-y, -500px),
+    rgba(99, 102, 241, 0.12),
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.project-feature-card:hover::before,
+.experience-card:hover::before,
+.contact-container-card:hover::before,
+.about-card:hover::before,
+.education-card:hover::before {
+  opacity: 1;
+}
+
+.project-details,
+.project-media-wrapper,
+.experience-card > *,
+.contact-container-card > *,
+.about-card > *,
+.education-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+
