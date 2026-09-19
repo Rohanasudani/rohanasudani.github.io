@@ -3,8 +3,9 @@
 import BackgroundEffect from '@/components/BackgroundEffect';
 import ScrollProgress from '@/components/ScrollProgress';
 import LeftPanel from '@/components/LeftPanel';
-import Projects from '@/components/Projects';
+import About from '@/components/About';
 import Experience from '@/components/Experience';
+import Projects from '@/components/Projects';
 import SkillsToolkit from '@/components/SkillsToolkit';
 import Education from '@/components/Education';
 import Contact from '@/components/Contact';
@@ -16,13 +17,12 @@ export default function PortfolioPage() {
       <BackgroundEffect />
 
       <div className="portfolio-layout-container">
-        {/* Left column / Top on mobile: Identity, Summary, Highlights, Navigation, CTAs */}
         <LeftPanel />
 
-        {/* Right column: Projects showcase, Experience, Skills, Education, Contact */}
         <main className="right-panel">
-          <Projects />
+          <About />
           <Experience />
+          <Projects />
           <SkillsToolkit />
           <Education />
           <Contact />

@@ -1,4 +1,4 @@
-import { projects, moreProject } from '@/data/portfolio';
+import { projects, additionalProjects } from '@/data/portfolio';
 
 function TerminalWidget() {
   return (
@@ -19,7 +19,7 @@ function TerminalWidget() {
         </div>
         <div className="terminal-line step">
           <span className="step-tag">[1/4]</span>
-          <span className="step-desc">Inspect repository, AST & symbol indices</span>
+          <span className="step-desc">Inspect repository, AST &amp; symbol indices</span>
         </div>
         <div className="terminal-line step">
           <span className="step-tag">[2/4]</span>
@@ -27,7 +27,7 @@ function TerminalWidget() {
         </div>
         <div className="terminal-line step">
           <span className="step-tag">[3/4]</span>
-          <span className="step-desc">Preview git diff & safety gate approval</span>
+          <span className="step-desc">Preview git diff &amp; safety gate approval</span>
         </div>
         <div className="terminal-line success">
           <span className="step-tag">[4/4]</span>
@@ -38,42 +38,11 @@ function TerminalWidget() {
   );
 }
 
-function RLChartWidget() {
-  const models = [
-    { name: 'Approx. Q-learning', rate: 99, display: '98–100%', highlight: true },
-    { name: 'Tabular Q-learning', rate: 45, display: '30–49%', highlight: false },
-    { name: 'SARSA baseline', rate: 40, display: '27–51%', highlight: false },
-  ];
-
-  return (
-    <div className="rl-chart-box" aria-label="Reinforcement learning benchmark success rates">
-      <div className="rl-chart-header">
-        <span className="rl-chart-title">Snake Agent Reliability Across Board Sizes</span>
-        <span className="rl-chart-sub">Evaluation Window</span>
-      </div>
-      <div className="rl-chart-bars">
-        {models.map((m) => (
-          <div key={m.name} className={`rl-bar-row ${m.highlight ? 'accent-row' : ''}`}>
-            <span className="rl-bar-label">{m.name}</span>
-            <div className="rl-bar-track">
-              <div
-                className="rl-bar-fill"
-                style={{ width: `${m.rate}%` }}
-              />
-            </div>
-            <span className="rl-bar-value">{m.display}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function Projects() {
   return (
     <section id="projects" className="content-section">
       <div className="section-head">
-        <span className="section-eyebrow">01 // Engineering Showcase</span>
+        <span className="section-eyebrow">03 // Engineering Showcase</span>
         <h2 className="section-title">Featured Projects</h2>
       </div>
 
@@ -94,8 +63,6 @@ export default function Projects() {
                 </div>
               ) : proj.visual === 'terminal' ? (
                 <TerminalWidget />
-              ) : proj.visual === 'chart' ? (
-                <RLChartWidget />
               ) : null}
             </div>
 
@@ -115,13 +82,11 @@ export default function Projects() {
               <p className="project-lead">{proj.description}</p>
               <p className="project-bullets">{proj.details}</p>
 
-              {/* Concrete Result / Impact callout */}
               <div className="project-impact-box">
                 <span className="impact-bullet">⚡</span>
                 <span className="impact-text">{proj.result}</span>
               </div>
 
-              {/* Technologies */}
               <div className="project-tech-pills">
                 {proj.tech.map((t) => (
                   <span key={t} className="tech-tag">
@@ -130,7 +95,6 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* Actions & Links */}
               <div className="project-links-row">
                 {proj.demo && (
                   <a
@@ -155,19 +119,13 @@ export default function Projects() {
           </article>
         ))}
 
-        {/* Additional Project Card */}
+        {/* Additional Projects (brief mention) */}
         <div className="more-project-card">
           <div className="more-project-info">
-            <span className="more-project-badge">Additional Project</span>
-            <h4 className="more-project-title">{moreProject.title}</h4>
-            <p className="more-project-desc">{moreProject.description}</p>
-          </div>
-          <div className="more-project-tags">
-            {moreProject.tech.map((t) => (
-              <span key={t} className="tech-tag mini">
-                {t}
-              </span>
-            ))}
+            <span className="more-project-badge">Additional Projects</span>
+            <p className="more-project-desc">
+              {additionalProjects.join(' · ')}
+            </p>
           </div>
         </div>
       </div>

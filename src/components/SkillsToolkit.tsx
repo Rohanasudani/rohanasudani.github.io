@@ -4,7 +4,7 @@ export default function SkillsToolkit() {
   return (
     <section id="skills" className="content-section">
       <div className="section-head">
-        <span className="section-eyebrow">03 // Capabilities</span>
+        <span className="section-eyebrow">04 // Capabilities</span>
         <h2 className="section-title">Technical Toolkit</h2>
       </div>
 

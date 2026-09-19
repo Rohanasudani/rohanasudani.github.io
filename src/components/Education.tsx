@@ -4,8 +4,8 @@ export default function Education() {
   return (
     <section id="education" className="content-section">
       <div className="section-head">
-        <span className="section-eyebrow">04 // Academics & Learning</span>
-        <h2 className="section-title">Education & Credentials</h2>
+        <span className="section-eyebrow">05 // Academics &amp; Learning</span>
+        <h2 className="section-title">Education &amp; Credentials</h2>
       </div>
 
       <div className="education-stack">
@@ -29,9 +29,17 @@ export default function Education() {
               </div>
             )}
 
+            {item.clubs && item.clubs.length > 0 && (
+              <div className="clubs-row">
+                {item.clubs.map((club) => (
+                  <span key={club} className="club-chip">{club}</span>
+                ))}
+              </div>
+            )}
+
             {item.coursework && (
               <div className="coursework-box">
-                <p className="coursework-title">Selected Coursework & Curriculum:</p>
+                <p className="coursework-title">Selected Coursework:</p>
                 <div className="coursework-tags">
                   {item.coursework.map((course) => (
                     <span key={course} className="course-chip">

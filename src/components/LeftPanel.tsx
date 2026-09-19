@@ -2,8 +2,7 @@
 
 import {
   name,
-  title,
-  specialty,
+  roles,
   tagline,
   bio,
   location,
@@ -14,10 +13,12 @@ import {
   navItems,
 } from '@/data/portfolio';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { useTypewriter } from '@/hooks/useTypewriter';
 
 export default function LeftPanel() {
   const sectionIds = navItems.map((item) => item.id);
   const activeSection = useActiveSection(sectionIds);
+  const typedRole = useTypewriter(roles, 90, 50, 2200);
 
   return (
     <aside className="left-panel">
@@ -25,21 +26,23 @@ export default function LeftPanel() {
         {/* Availability Badge */}
         <div className="status-pill">
           <span className="status-ping" />
-          <span className="status-text">Available for Summer 2026 & Fall Roles</span>
+          <span className="status-text">Available for Summer 2026 &amp; Fall Roles</span>
         </div>
 
         {/* Identity & Avatar */}
         <div className="identity-block">
-          <div className="avatar-wrapper" title="Easily customizable: replace with your headshot in LeftPanel.tsx">
-            {/* Note: To use your photo, swap this div with: <img src="/images/rohan.jpg" alt="Rohan Asudani" className="avatar-img" /> */}
+          <div className="avatar-wrapper" title="Swap with your headshot: replace the monogram div with an img tag">
             <div className="avatar-monogram">RA</div>
             <div className="avatar-ring" />
           </div>
 
           <div className="identity-text">
             <h1 className="display-name">{name}</h1>
-            <p className="primary-title">{title}</p>
-            <p className="specialty-title">{specialty}</p>
+            {/* Typewriter cycling through roles */}
+            <p className="primary-title typewriter-line">
+              {typedRole}
+              <span className="cursor-blink">|</span>
+            </p>
           </div>
         </div>
 
@@ -101,7 +104,7 @@ export default function LeftPanel() {
           })}
         </nav>
 
-        {/* Authentic Resume Impact Metrics */}
+        {/* Resume Impact Metrics */}
         <div className="verified-metrics">
           <p className="metrics-heading">Verified Highlights</p>
           <div className="metrics-grid">
