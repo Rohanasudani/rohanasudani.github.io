@@ -18,7 +18,7 @@ import { useTypewriter } from '@/hooks/useTypewriter';
 export default function LeftPanel() {
   const sectionIds = navItems.map((item) => item.id);
   const activeSection = useActiveSection(sectionIds);
-  const typedRole = useTypewriter(roles, 140, 70, 3500);
+  const typedRole = useTypewriter(roles, 85, 45, 2000);
 
   return (
     <aside className="left-panel">
