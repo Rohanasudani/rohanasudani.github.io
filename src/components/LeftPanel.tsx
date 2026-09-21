@@ -8,7 +8,6 @@ import {
   location,
   gradDate,
   metrics,
-  socials,
   resumeHref,
   navItems,
 } from '@/data/portfolio';
@@ -119,20 +118,8 @@ export default function LeftPanel() {
         </div>
       </div>
 
-      {/* Social & Contact Footer */}
+      {/* Footer */}
       <div className="left-panel-bottom">
-        <div className="social-links-row">
-          {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              className="panel-social-link"
-              {...(s.external ? { target: '_blank', rel: 'noreferrer' } : {})}
-            >
-              {s.label}
-            </a>
-          ))}
-        </div>
         <p className="copyright-mini">© {new Date().getFullYear()} Rohan Asudani</p>
       </div>
     </aside>
