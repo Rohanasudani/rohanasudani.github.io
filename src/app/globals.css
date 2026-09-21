@@ -140,7 +140,7 @@ ul {
   padding: 0 40px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (min-height: 900px) {
   .portfolio-layout-container {
     display: grid;
     grid-template-columns: minmax(420px, 460px) 1fr;
@@ -154,7 +154,7 @@ ul {
   position: relative;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (min-height: 900px) {
   .left-panel {
     position: sticky;
     top: 0;
@@ -164,14 +164,19 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-subtle) transparent;
   }
   .left-panel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    width: 4px;
+  }
+  .left-panel::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 4px;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1199px), (max-height: 899px) {
   .left-panel {
     padding: 48px 0 24px;
     border-bottom: 1px solid var(--border-subtle);
@@ -383,7 +388,7 @@ ul {
   margin-bottom: 36px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (min-height: 900px) {
   .panel-nav {
     display: flex;
   }
@@ -533,13 +538,13 @@ ul {
   gap: 88px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (min-height: 900px) {
   .right-panel {
     padding: 64px 0 100px;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1199px), (max-height: 899px) {
   .right-panel {
     padding: 32px 0 80px;
     gap: 64px;
@@ -1441,6 +1446,24 @@ ul {
 
   .display-name {
     font-size: 2rem;
+  }
+
+  .right-panel {
+    gap: 48px;
+    padding: 24px 0 60px;
+  }
+
+  .projects-stack {
+    gap: 24px;
+  }
+
+  .experience-timeline,
+  .education-stack {
+    gap: 16px;
+  }
+
+  .skills-grid-container {
+    gap: 14px;
   }
 
   .metrics-grid {

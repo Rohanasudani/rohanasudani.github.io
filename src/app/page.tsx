@@ -28,12 +28,6 @@ export default function PortfolioPage() {
           <SkillsToolkit />
           <Education />
           <Contact />
-
-          <footer className="compact-footer">
-            <p className="footer-built">
-              Designed &amp; engineered by <strong>Rohan Asudani</strong> · Built with Next.js &amp; TypeScript · Hosted on GitHub Pages
-            </p>
-          </footer>
         </main>
       </div>
     </div>
