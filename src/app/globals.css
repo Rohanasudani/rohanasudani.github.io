@@ -140,11 +140,11 @@ ul {
   padding: 0 40px;
 }
 
-@media (min-width: 1200px) and (min-height: 900px) {
+@media (min-width: 1024px) {
   .portfolio-layout-container {
     display: grid;
-    grid-template-columns: minmax(420px, 460px) 1fr;
-    gap: clamp(48px, 5vw, 72px);
+    grid-template-columns: minmax(380px, 440px) 1fr;
+    gap: clamp(40px, 5vw, 68px);
     align-items: start;
   }
 }
@@ -154,12 +154,12 @@ ul {
   position: relative;
 }
 
-@media (min-width: 1200px) and (min-height: 900px) {
+@media (min-width: 1024px) {
   .left-panel {
     position: sticky;
     top: 0;
     max-height: 100vh;
-    padding: 64px 0 48px;
+    padding: 48px 0 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -176,7 +176,7 @@ ul {
   }
 }
 
-@media (max-width: 1199px), (max-height: 899px) {
+@media (max-width: 1023px) {
   .left-panel {
     padding: 48px 0 24px;
     border-bottom: 1px solid var(--border-subtle);
@@ -388,7 +388,7 @@ ul {
   margin-bottom: 36px;
 }
 
-@media (min-width: 1200px) and (min-height: 900px) {
+@media (min-width: 1024px) {
   .panel-nav {
     display: flex;
   }
@@ -538,13 +538,13 @@ ul {
   gap: 88px;
 }
 
-@media (min-width: 1200px) and (min-height: 900px) {
+@media (min-width: 1024px) {
   .right-panel {
-    padding: 64px 0 100px;
+    padding: 48px 0 96px;
   }
 }
 
-@media (max-width: 1199px), (max-height: 899px) {
+@media (max-width: 1023px) {
   .right-panel {
     padding: 32px 0 80px;
     gap: 64px;
