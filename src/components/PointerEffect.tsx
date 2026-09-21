@@ -1,25 +1,38 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+
+function subscribePointer(callback: () => void) {
+  const mqlTouch = window.matchMedia('(pointer: coarse)');
+  const mqlMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  mqlTouch.addEventListener('change', callback);
+  mqlMotion.addEventListener('change', callback);
+  return () => {
+    mqlTouch.removeEventListener('change', callback);
+    mqlMotion.removeEventListener('change', callback);
+  };
+}
+
+function getPointerSnapshot() {
+  if (typeof window === 'undefined') return false;
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  return !isTouch && !prefersReducedMotion;
+}
+
+function getServerSnapshot() {
+  return false;
+}
 
 export default function PointerEffect() {
   const reticleRef = useRef<HTMLDivElement>(null);
   const torchRef = useRef<HTMLDivElement>(null);
   const coordsRef = useRef<HTMLSpanElement>(null);
   const [isLocked, setIsLocked] = useState(false);
-  const [enabled, setEnabled] = useState(false);
+  const enabled = useSyncExternalStore(subscribePointer, getPointerSnapshot, getServerSnapshot);
 
   useEffect(() => {
-    // Disable on touch / coarse pointer devices or if user prefers reduced motion
-    if (typeof window === 'undefined') return;
-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (isTouch || prefersReducedMotion) {
-      setEnabled(false);
-      return;
-    }
-    setEnabled(true);
+    if (!enabled) return;
 
     let mouseX = -100;
     let mouseY = -100;
@@ -41,10 +54,9 @@ export default function PointerEffect() {
         reticleRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
       }
 
-      // Check if reticle has converged close to target
       if (Math.abs(dx) < 0.15 && Math.abs(dy) < 0.15) {
         isRunning = false;
-        return; // Idle: stop RAF loop!
+        return;
       }
 
       rafId = requestAnimationFrame(render);
@@ -61,18 +73,15 @@ export default function PointerEffect() {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      // Update background torch
       if (torchRef.current) {
         torchRef.current.style.opacity = '1';
         torchRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       }
 
-      // Direct DOM update for coordinates — zero React re-renders!
       if (coordsRef.current) {
         coordsRef.current.textContent = `${Math.round(mouseX)}:${Math.round(mouseY)}`;
       }
 
-      // Check interactive hover
       const target = e.target as HTMLElement | null;
       if (target) {
         const interactive = target.closest(
@@ -84,7 +93,6 @@ export default function PointerEffect() {
           setIsLocked(hoveringNow);
         }
 
-        // Card spotlight variables
         const card = target.closest<HTMLElement>(
           '.project-feature-card, .experience-card, .contact-container-card, .about-card, .education-card',
         );
@@ -115,31 +123,27 @@ export default function PointerEffect() {
       document.removeEventListener('mouseleave', onMouseLeave);
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [enabled]);
 
   if (!enabled) return null;
 
   return (
     <>
-      {/* Ambient Blueprint Torch Spotlight */}
+      {/* Background torch spotlight */}
       <div ref={torchRef} className="pointer-torch" aria-hidden="true" />
 
-      {/* High-Tech Developer HUD Crosshair & Targeting Reticle */}
+      {/* Reticle */}
       <div
         ref={reticleRef}
         className={`hud-reticle ${isLocked ? 'target-locked' : ''}`}
         aria-hidden="true"
       >
-        {/* 4 Precision Corner Brackets */}
         <span className="reticle-corner corner-tl" />
         <span className="reticle-corner corner-tr" />
         <span className="reticle-corner corner-bl" />
         <span className="reticle-corner corner-br" />
-
-        {/* Central Targeting Cross */}
         <span className="reticle-center-cross" />
 
-        {/* Coordinate Telemetry Tag (Direct DOM updated, zero re-renders) */}
         <div className="reticle-coords">
           <span className="reticle-status-text">
             {isLocked ? 'LOCK' : 'SYS'}

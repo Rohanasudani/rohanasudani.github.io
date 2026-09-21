@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { projects, additionalProjects } from '@/data/portfolio';
 
 function TerminalWidget() {
@@ -49,18 +50,16 @@ export default function Projects() {
       <div className="projects-stack">
         {projects.map((proj) => (
           <article key={proj.title} className="project-feature-card">
-            {/* Project Media Banner */}
             <div className="project-media-wrapper">
               {proj.visual === 'image' && proj.imageSrc ? (
                 <div className="project-image-frame">
-                  <img
+                  <Image
                     src={proj.imageSrc}
                     alt={proj.imageAlt || proj.title}
                     className="project-screenshot"
-                    loading="lazy"
-                    decoding="async"
                     width={1376}
                     height={768}
+                    unoptimized
                   />
                   <div className="project-image-overlay" />
                 </div>
@@ -69,7 +68,6 @@ export default function Projects() {
               ) : null}
             </div>
 
-            {/* Project Content */}
             <div className="project-details">
               <div className="project-meta-row">
                 <span className="project-num">{proj.index}</span>
@@ -84,7 +82,6 @@ export default function Projects() {
               <h3 className="project-name">{proj.title}</h3>
               <p className="project-lead">{proj.description}</p>
 
-              {/* Expandable Technical Details for clean, condensed mobile UX */}
               {proj.details && (
                 <details className="project-details-disclosure">
                   <summary className="details-toggle-btn">
@@ -132,7 +129,6 @@ export default function Projects() {
           </article>
         ))}
 
-        {/* Additional Projects (brief mention) */}
         <div className="more-project-card">
           <div className="more-project-info">
             <span className="more-project-badge">Additional Projects</span>

@@ -1,7 +1,4 @@
-/* ──────────────────────────────────────────
-   Portfolio Data — Rohan Asudani
-   100% strictly aligned with the latest one-page resume.
-   ────────────────────────────────────────── */
+// Portfolio Data
 
 export interface Project {
   index: string;
@@ -54,12 +51,11 @@ export interface SocialLink {
   external?: boolean;
 }
 
-/* ─── Hero Identity ─── */
-
+// Profile
 export const name = 'Rohan Asudani';
 export const title = 'Software Engineer';
 
-/* Typewriter roles — cycles below the name */
+// Typewriter roles
 export const roles = [
   'Software Engineer',
   'Full-Stack Developer',
@@ -73,7 +69,7 @@ export const tagline =
 export const bio =
   'Computer Science student at the University of Arizona with an AI minor, with experience building production web platforms supporting 100+ university websites and software used by real customers.';
 
-/* About section — concise personal introduction */
+// About
 export const aboutParagraphs = [
   "I'm a Computer Science student at the University of Arizona with an AI minor, graduating May 2027. I care about building software that works in production — whether that's web platforms serving thousands of users, AI infrastructure with real evaluation guardrails, or developer tools with reproducible benchmarks.",
   "I'm actively looking for full-time software engineering roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities. I work extensively with AI-assisted development tools including OpenAI Codex, Claude Code, and Google Antigravity.",
@@ -85,7 +81,7 @@ export const phone = '520-271-1351';
 export const website = 'purealtors.in';
 export const gradDate = 'Expected May 2027';
 
-/* Verified impact metrics from resume (strictly accurate) */
+// Highlights
 export const metrics = [
   {
     value: '100+',
@@ -109,8 +105,7 @@ export const metrics = [
   },
 ];
 
-/* ─── Social & Direct Links ─── */
-
+// Socials
 export const socials: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/Rohanasudani', external: true },
   {
@@ -124,8 +119,7 @@ export const socials: SocialLink[] = [
 
 export const resumeHref = '/resume-rohan-asudani.pdf';
 
-/* ─── Experience (UA ITS → FitArt → PawPrints) ─── */
-
+// Experience
 export const experiences: ExperienceItem[] = [
   {
     title: 'IT Web Analyst',
@@ -162,8 +156,7 @@ export const experiences: ExperienceItem[] = [
   },
 ];
 
-/* ─── Featured Projects (verbatim from latest resume) ─── */
-
+// Projects
 export const projects: Project[] = [
   {
     index: '01',
@@ -212,14 +205,13 @@ export const projects: Project[] = [
   },
 ];
 
-/* Additional projects mentioned briefly */
+// Additional Projects
 export const additionalProjects = [
   'CSC337 Web Programming final project',
   'Snake/Gridworld RL (Q-learning, SARSA, approximate Q-learning; 98–100% Snake success in later runs)',
 ];
 
-/* ─── Skills (verbatim from latest resume) ─── */
-
+// Skills
 export const skills: SkillCategory[] = [
   {
     category: 'Languages',
@@ -262,8 +254,7 @@ export const skills: SkillCategory[] = [
   },
 ];
 
-/* ─── Education (verbatim from latest resume) ─── */
-
+// Education
 export const education: EducationEntry[] = [
   {
     school: 'University of Arizona',
@@ -305,8 +296,7 @@ export const education: EducationEntry[] = [
   },
 ];
 
-/* ─── Navigation ─── */
-
+// Navigation
 export const navItems = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
