@@ -16,6 +16,9 @@ export default function Education() {
                 <h3 className="school-name">{item.school}</h3>
                 {item.college && <p className="college-name">{item.college}</p>}
                 <p className="degree-name">{item.degree}</p>
+                {item.description && (
+                  <p className="education-description">{item.description}</p>
+                )}
               </div>
               <div className="education-status-meta">
                 <span className="timeline-badge">{item.expected}</span>

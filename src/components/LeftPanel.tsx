@@ -26,7 +26,7 @@ export default function LeftPanel() {
         {/* Availability Badge */}
         <div className="status-pill">
           <span className="status-ping" />
-          <span className="status-text">Open to Full-Time (May 2027) &amp; Summer 2026 Internships</span>
+          <span className="status-text">Open to Full-Time (May 2027) &amp; Co-op / Intern Roles</span>
         </div>
 
         {/* Identity & Avatar */}

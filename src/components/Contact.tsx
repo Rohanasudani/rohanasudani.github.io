@@ -4,13 +4,13 @@ export default function Contact() {
   return (
     <section id="contact" className="content-section">
       <div className="section-head">
-        <span className="section-eyebrow">05 // Direct Outreach</span>
+        <span className="section-eyebrow">06 // Direct Outreach</span>
         <h2 className="section-title">Get In Touch</h2>
       </div>
 
       <div className="contact-container-card">
         <p className="contact-invite">
-          I&apos;m actively seeking full-time software engineering roles starting right after graduation (May 2027), as well as a final summer internship during Summer 2026 or part-time/co-op opportunities across full-stack development, AI infrastructure, and systems engineering. Whether you have an open role, an exciting technical challenge, or just want to connect, feel free to reach out.
+          I&apos;m actively seeking full-time software engineering roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities across full-stack development, AI infrastructure, and systems engineering. Whether you have an open role, an exciting technical challenge, or just want to connect, feel free to reach out.
         </p>
 
         <div className="contact-methods-grid">

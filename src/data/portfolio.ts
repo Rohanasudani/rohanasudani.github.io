@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────
    Portfolio Data — Rohan Asudani
-   100% strictly aligned with resume .tex source.
+   100% strictly aligned with the latest one-page resume.
    ────────────────────────────────────────── */
 
 export interface Project {
@@ -12,6 +12,7 @@ export interface Project {
   result: string;
   tech: string[];
   github: string;
+  githubLabel?: string;
   demo?: string;
   status?: string;
   visual: 'image' | 'terminal' | 'chart';
@@ -37,6 +38,7 @@ export interface EducationEntry {
   school: string;
   college?: string;
   degree: string;
+  description?: string;
   expected: string;
   location?: string;
   honors?: string[];
@@ -71,10 +73,10 @@ export const tagline =
 export const bio =
   'Computer Science student at the University of Arizona with an AI minor, with experience building production web platforms supporting 100+ university websites and software used by real customers.';
 
-/* About section — a longer personal introduction */
+/* About section — concise personal introduction */
 export const aboutParagraphs = [
   "I'm a Computer Science student at the University of Arizona with an AI minor, graduating May 2027. I care about building software that works in production — whether that's web platforms serving thousands of users, AI infrastructure with real evaluation guardrails, or developer tools with reproducible benchmarks.",
-  "I'm looking for full-time roles starting right after graduation, as well as a final summer internship during Summer 2026 or part-time/co-op opportunities. I work extensively with AI-assisted development tools including OpenAI Codex, Claude Code, and Google Antigravity.",
+  "I'm actively looking for full-time software engineering roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities. I work extensively with AI-assisted development tools including OpenAI Codex, Claude Code, and Google Antigravity.",
 ];
 
 export const location = 'Tucson, AZ';
@@ -83,11 +85,11 @@ export const phone = '520-271-1351';
 export const website = 'purealtors.in';
 export const gradDate = 'Expected May 2027';
 
-/* Verified impact metrics from resume */
+/* Verified impact metrics from resume (strictly accurate) */
 export const metrics = [
   { value: '100+', label: 'University Web Properties Supported', sub: 'UA ITS platform maintenance' },
-  { value: '~$82K', label: 'Property Sales Revenue Contributed', sub: '~₹70L via SEO & conversion flows' },
-  { value: '8/8', label: 'Coding Agent Benchmark Score', sub: 'Terminal Agent deterministic suite' },
+  { value: '~$82K', label: 'Property Sales Revenue Contributed', sub: '~INR 70 lakh via SEO & conversion flows' },
+  { value: '8/8', label: 'Local Fixture Suite Passed', sub: '8-task local baseline (176 tests)' },
   { value: '-20%', label: 'Bug Reports Reduced', sub: 'FitArt Health internship' },
 ];
 
@@ -106,7 +108,7 @@ export const socials: SocialLink[] = [
 
 export const resumeHref = '/resume-rohan-asudani.pdf';
 
-/* ─── Experience (IT Web Analyst → SDE Intern → PawPrints) ─── */
+/* ─── Experience (UA ITS → FitArt → PawPrints) ─── */
 
 export const experiences: ExperienceItem[] = [
   {
@@ -127,9 +129,9 @@ export const experiences: ExperienceItem[] = [
     location: 'Nagpur, India',
     period: 'May 2025 – Aug. 2025',
     bullets: [
-      'Developed and tested app and web workflows for a fitness marketplace connecting members with 70+ centers, with attention to membership discovery and trial inquiries.',
-      'Reproduced reported issues with product and engineering, then tested changes across affected app and web flows.',
-      'Debugged defects and performed regression testing before releases, contributing to a 20% reduction in reported bugs.',
+      "Developed and shipped app and web features for FitArt's one-membership marketplace spanning 70+ fitness centers, including center discovery, program details, free-trial inquiries, and contact flows.",
+      'Collaborated with product and engineering to design and deploy scalable backend services; integrated and validated WordPress/WooCommerce data flows, Contact Form 7 submissions, and AJAX endpoints.',
+      'Reproduced API and UI defects, debugged affected flows, and ran cross-platform regression and production-release checks, contributing to a 20% reduction in reported bugs.',
     ],
   },
   {
@@ -138,12 +140,13 @@ export const experiences: ExperienceItem[] = [
     location: 'Tucson, AZ',
     period: 'Sep. 2026 – Present',
     bullets: [
-      'Designing owner-facing app workflows for device pairing, session capture, and sensor-data sync for a smart-collar beta.',
+      'Own mobile app development for a UA-founded smart-collar startup, designing owner-facing flows for pairing, session recording, sensor-data sync, and beta feedback.',
+      'Translate motion, sound, light, and temperature signals from the hardware/ML prototype into iOS/Android capture workflows, onboarding screens, and data models.',
     ],
   },
 ];
 
-/* ─── Featured Projects (from .tex resume with enriched details) ─── */
+/* ─── Featured Projects (verbatim from latest resume) ─── */
 
 export const projects: Project[] = [
   {
@@ -151,11 +154,11 @@ export const projects: Project[] = [
     title: 'Enterprise AI Model Router',
     year: '2026',
     description:
-      'Full-stack LLM evaluation and routing dashboard that compares models on quality, estimated cost, latency, and context fit, then applies team budgets and allow/block/downgrade/escalate policies.',
+      'Built and deployed an LLM evaluation and routing platform that ranks models by quality, estimated cost, latency, and context fit while enforcing team budgets and allow, block, downgrade, and escalation policies.',
     details:
-      'Implemented prompt cases, persisted evaluation history, rubric-based LLM-as-judge scoring, policy audit records, and JSON/CSV savings estimates using Next.js API routes and PostgreSQL. Added guarded OpenAI Responses API calls, request validation, admin controls, rate limits, and CI with unit, build, and Playwright end-to-end checks; public demo runs in mock mode.',
-    result: 'Policy-aware routing, LLM-as-judge scoring, team budget governance & Playwright E2E CI',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'OpenAI API', 'Playwright'],
+      'Implemented prompt cases, PostgreSQL evaluation history, rubric-based LLM-as-judge scoring, policy audit logs, and reproducible JSON/CSV savings reports. Secured OpenAI Responses API workflows with server-side credentials, request validation, admin authorization, rate limits, and production error redaction; added unit, build, and Playwright end-to-end CI checks.',
+    result: 'Policy-aware routing, LLM-as-judge rubric scoring, budget governance & Playwright E2E CI',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'OpenAI Responses API', 'Playwright'],
     github: 'https://github.com/Rohanasudani/enterprise-ai-model-router',
     demo: 'https://enterprise-ai-model-router.vercel.app',
     visual: 'image',
@@ -166,11 +169,11 @@ export const projects: Project[] = [
     index: '02',
     title: 'Terminal Coding Agent',
     description:
-      'Terminal agent that searches repositories, indexes Python/JavaScript/TypeScript symbols, plans edits, previews patches, runs verification commands, and reports token and estimated cost usage.',
+      'Built a terminal coding agent that searches repositories, indexes Python, JavaScript, and TypeScript symbols, plans edits, previews patches, executes verification commands, and tracks token and estimated cost usage.',
     details:
-      'Enforced repository-root file access, patch-plan checks, and classified shell commands with approval modes; recorded tool calls and outcomes as reproducible JSONL traces. Created an 8-task local fixture benchmark and Harbor/Terminal-Bench campaign tooling to measure task completion and diagnose failures; local fixture suite passes 8/8.',
-    result: '8-task deterministic local benchmark suite passes 8/8 with full token & cost tracking',
-    tech: ['Python', 'CLI', 'Git', 'OpenAI-compatible API'],
+      'Designed a tool-mediated safety layer with repository-bound file access, planned-write hashes, shell-command classification, approval modes, final-diff validation, and reproducible JSONL execution traces. Built reproducible Harbor/Terminal-Bench 2 evaluation tooling with frozen task hashes, independent graders, comparator runs, and failure analysis; validated orchestration with 176 automated tests and an 8/8 local fixture baseline.',
+    result: '176 automated tests passing and an 8/8 deterministic local fixture baseline',
+    tech: ['Python', 'CLI', 'Git', 'OpenAI Responses API'],
     github: 'https://github.com/Rohanasudani/terminal-coding-agent',
     visual: 'terminal',
   },
@@ -179,12 +182,13 @@ export const projects: Project[] = [
     title: 'PU Realtors Website',
     year: '2026',
     description:
-      'Production real estate site for property discovery and buyer inquiries; the digital lead channel contributed to approximately INR 70 lakh (~US$82K) in plot sales.',
+      'Co-developed a production real estate site for property discovery and buyer inquiries; the digital lead channel contributed to approximately INR 70 lakh in plot sales.',
     details:
       'Structured mobile-friendly property pages, SEO content, trust details, and WhatsApp/call actions so buyers could compare projects and request a consultation or site visit.',
-    result: 'Contributed to ~₹70L (~$82K USD) in residential plot sales via SEO & WhatsApp pipelines',
+    result: 'Contributed to approximately INR 70 lakh in residential plot sales via SEO & WhatsApp actions',
     tech: ['Web Design', 'SEO', 'Lead Generation'],
     github: 'https://github.com/Rohanasudani/pu-realtors-website-case-study',
+    githubLabel: 'Case Study ↗',
     demo: 'https://purealtors.in/',
     visual: 'image',
     imageSrc: '/projects/pu-realtors-river.png',
@@ -194,11 +198,11 @@ export const projects: Project[] = [
 
 /* Additional projects mentioned briefly */
 export const additionalProjects = [
-  'CSC337 Web Programming Final Project',
-  'Snake/Gridworld RL (Q-learning, SARSA, Approximate Q-learning)',
+  'CSC337 Web Programming final project',
+  'Snake/Gridworld RL (Q-learning, SARSA, approximate Q-learning; 98–100% Snake success in later runs)',
 ];
 
-/* ─── Skills (from .tex resume) ─── */
+/* ─── Skills (verbatim from latest resume) ─── */
 
 export const skills: SkillCategory[] = [
   {
@@ -215,36 +219,47 @@ export const skills: SkillCategory[] = [
       'LLM Evaluation',
       'AI Agents',
       'RAG',
+      'Reinforcement Learning',
+      'Q-learning',
+      'SARSA',
       'PyTorch',
       'Hugging Face',
-      'Docker',
-      'Git',
-      'Linux/Bash',
-      'CI/CD',
-      'Playwright',
     ],
     highlighted: true,
   },
   {
-    category: 'AI-Assisted Dev & Ops',
-    items: ['OpenAI Codex', 'Claude Code', 'Antigravity', 'Tableau', 'CRM Workflows'],
+    category: 'DevOps & Tools',
+    items: [
+      'Docker',
+      'CI/CD',
+      'Git/GitHub',
+      'Linux/Bash',
+      'Playwright',
+      'Tableau',
+      'CRM',
+      'Lovable',
+    ],
+  },
+  {
+    category: 'AI-Assisted Development',
+    items: ['OpenAI Codex', 'Claude Code', 'Antigravity'],
   },
 ];
 
-/* ─── Education (from .tex resume) ─── */
+/* ─── Education (verbatim from latest resume) ─── */
 
 export const education: EducationEntry[] = [
   {
     school: 'University of Arizona',
     college: 'College of Science',
-    degree: 'B.S. in Computer Science; Minor in Artificial Intelligence',
+    degree: 'B.S. Computer Science; Minor in Artificial Intelligence',
     expected: 'Expected May 2027',
     location: 'Tucson, AZ',
     honors: ["Dean's List", 'Global Wildcat Award'],
     clubs: ['Google Developer Student Club', 'University of Arizona AI Club'],
     coursework: [
       'Software Development',
-      'Object-Oriented Programming & Design',
+      'Object-Oriented Programming & Design (OOP)',
       'Data Science',
       'Artificial Intelligence',
       'Systems Programming',
@@ -254,28 +269,27 @@ export const education: EducationEntry[] = [
   },
   {
     school: '100xDevs Bootcamp 1.0',
-    degree: 'Web Development, DevOps, AI/ML, and Data Structures',
+    degree: 'Project-Based Web Development, DevOps, AI/ML, and DSA Program',
+    description:
+      'Intensive training in TypeScript, React/Next.js, Node.js/Express, PostgreSQL/MongoDB, Docker, CI/CD, cloud deployment, PyTorch, Hugging Face, RAG, AI agents, MCP, LLM evaluation, and C++ DSA.',
     expected: 'In Progress',
     location: 'Remote',
     inProgress: true,
     topics: [
-      'TypeScript',
-      'React/Next.js',
-      'Node.js/Express',
-      'PostgreSQL/MongoDB',
-      'Docker',
-      'CI/CD',
-      'Cloud Workflows',
-      'PyTorch',
-      'RAG',
-      'AI Agents',
-      'Evals',
+      'TypeScript, React, Next.js',
+      'Node.js, Express, REST APIs',
+      'PostgreSQL, MongoDB, Prisma',
+      'Docker, CI/CD, Cloud Deployment',
+      'PyTorch & Hugging Face',
+      'RAG & Vector Search',
+      'AI Agents & MCP',
+      'LLM Evaluation',
       'C++ Data Structures & Algorithms',
     ],
   },
 ];
 
-/* ─── Navigation (Experience before Projects) ─── */
+/* ─── Navigation ─── */
 
 export const navItems = [
   { id: 'about', label: 'About' },

@@ -112,7 +112,7 @@ export default function Projects() {
                   rel="noreferrer"
                   className="project-link-cta"
                 >
-                  Source Code ↗
+                  {proj.githubLabel || 'Source Code ↗'}
                 </a>
               </div>
             </div>
