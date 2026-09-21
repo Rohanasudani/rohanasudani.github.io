@@ -5,19 +5,34 @@ import { useState, useEffect } from 'react';
 /**
  * Robust, flicker-free typewriter hook.
  * Types forward, stays on screen for pauseMs, deletes back, and advances to the next string.
+ * Respects prefers-reduced-motion by serving a static string without animation.
  */
 export function useTypewriter(
   strings: string[],
-  typingSpeed = 110,
-  deletingSpeed = 50,
-  pauseMs = 3500,
+  typingSpeed = 85,
+  deletingSpeed = 45,
+  pauseMs = 2000,
 ) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState(strings[0] || '');
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mql.matches);
+    const onChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
 
   useEffect(() => {
     if (!strings || strings.length === 0) return;
+    if (reducedMotion) {
+      setText(strings[0] || '');
+      return;
+    }
 
     const current = strings[index];
     let timer: NodeJS.Timeout;
@@ -29,7 +44,7 @@ export function useTypewriter(
           setText(current.slice(0, text.length + 1));
         }, typingSpeed);
       } else {
-        // FULL STRING DISPLAYED — Stay steady and readable for pauseMs (3.5s)!
+        // FULL STRING DISPLAYED — Stay steady and readable for pauseMs!
         timer = setTimeout(() => {
           setIsDeleting(true);
         }, pauseMs);
@@ -50,7 +65,7 @@ export function useTypewriter(
     }
 
     return () => clearTimeout(timer);
-  }, [text, isDeleting, index, strings, typingSpeed, deletingSpeed, pauseMs]);
+  }, [text, isDeleting, index, strings, typingSpeed, deletingSpeed, pauseMs, reducedMotion]);
 
   return text;
 }

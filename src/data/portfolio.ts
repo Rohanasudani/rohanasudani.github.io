@@ -162,7 +162,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Rohanasudani/enterprise-ai-model-router',
     demo: 'https://enterprise-ai-model-router.vercel.app',
     visual: 'image',
-    imageSrc: '/projects/model-router-dashboard.png',
+    imageSrc: '/projects/model-router-dashboard.webp',
     imageAlt: 'Enterprise AI Model Router live dashboard interface and analytics',
   },
   {
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     githubLabel: 'Case Study ↗',
     demo: 'https://purealtors.in/',
     visual: 'image',
-    imageSrc: '/projects/pu-realtors-river.png',
+    imageSrc: '/projects/pu-realtors-river.webp',
     imageAlt: 'PU Realtors platform property presentation and lead capture workflow',
   },
 ];

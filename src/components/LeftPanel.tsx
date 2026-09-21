@@ -31,7 +31,7 @@ export default function LeftPanel() {
 
         {/* Identity & Avatar */}
         <div className="identity-block">
-          <div className="avatar-wrapper" title="Swap with your headshot: replace the monogram div with an img tag">
+          <div className="avatar-wrapper" aria-hidden="true">
             <div className="avatar-monogram">RA</div>
             <div className="avatar-ring" />
           </div>

@@ -31,7 +31,7 @@ function TerminalWidget() {
         </div>
         <div className="terminal-line success">
           <span className="step-tag">[4/4]</span>
-          <span className="step-desc">Deterministic test loop: 8/8 tasks passed (0 errors)</span>
+          <span className="step-desc">Deterministic test loop: 176 automated tests &amp; 8/8 fixtures passed</span>
         </div>
       </div>
     </div>
@@ -58,6 +58,9 @@ export default function Projects() {
                     alt={proj.imageAlt || proj.title}
                     className="project-screenshot"
                     loading="lazy"
+                    decoding="async"
+                    width={1376}
+                    height={768}
                   />
                   <div className="project-image-overlay" />
                 </div>
@@ -80,7 +83,17 @@ export default function Projects() {
 
               <h3 className="project-name">{proj.title}</h3>
               <p className="project-lead">{proj.description}</p>
-              <p className="project-bullets">{proj.details}</p>
+
+              {/* Expandable Technical Details for clean, condensed mobile UX */}
+              {proj.details && (
+                <details className="project-details-disclosure">
+                  <summary className="details-toggle-btn">
+                    <span className="toggle-icon">▸</span>
+                    <span>Technical Architecture &amp; Implementation</span>
+                  </summary>
+                  <p className="project-bullets">{proj.details}</p>
+                </details>
+              )}
 
               <div className="project-impact-box">
                 <span className="impact-bullet">⚡</span>
