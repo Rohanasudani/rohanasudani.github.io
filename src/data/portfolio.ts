@@ -87,10 +87,26 @@ export const gradDate = 'Expected May 2027';
 
 /* Verified impact metrics from resume (strictly accurate) */
 export const metrics = [
-  { value: '100+', label: 'University Web Properties Supported', sub: 'UA ITS platform maintenance' },
-  { value: '~$82K', label: 'Property Sales Revenue Contributed', sub: '~INR 70 lakh via SEO & conversion flows' },
-  { value: '8/8', label: 'Local Fixture Suite Passed', sub: '8-task local baseline (176 tests)' },
-  { value: '-20%', label: 'Bug Reports Reduced', sub: 'FitArt Health internship' },
+  {
+    value: '100+',
+    label: 'University Web Properties Supported',
+    sub: 'UA ITS platform maintenance',
+  },
+  {
+    value: '~$82K',
+    label: 'Property Sales Influenced',
+    sub: '~INR 70 lakh through the digital lead channel',
+  },
+  {
+    value: '176/176',
+    label: 'Automated Tests Passing',
+    sub: 'Terminal Agent reliability suite',
+  },
+  {
+    value: '20%',
+    label: 'Reduction in Reported Bugs',
+    sub: 'FitArt engineering internship',
+  },
 ];
 
 /* ─── Social & Direct Links ─── */

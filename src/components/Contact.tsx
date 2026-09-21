@@ -1,4 +1,4 @@
-import { email, phone, location, socials, resumeHref } from '@/data/portfolio';
+import { email, phone, location, resumeHref } from '@/data/portfolio';
 
 export default function Contact() {
   return (
@@ -42,22 +42,6 @@ export default function Contact() {
             <span className="method-val">resume-rohan-asudani.pdf</span>
             <span className="method-action">Download PDF ↗</span>
           </a>
-        </div>
-
-        <div className="contact-socials-bar">
-          <span className="socials-bar-label">Profiles & Links:</span>
-          <div className="socials-bar-items">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                className="social-bar-link"
-                {...(s.external ? { target: '_blank', rel: 'noreferrer' } : {})}
-              >
-                {s.label} ↗
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </section>
