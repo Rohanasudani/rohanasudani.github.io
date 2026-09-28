@@ -53,26 +53,26 @@ export interface SocialLink {
 
 // Profile
 export const name = 'Rohan Asudani';
-export const title = 'Software Engineer';
+export const title = 'Software Engineer · Applied AI Engineer';
 
 // Typewriter roles
 export const roles = [
   'Software Engineer',
+  'Applied AI Engineer',
   'AI Systems Builder',
-  'Full-Stack Developer',
   'Developer Tooling Engineer',
 ];
 
 export const tagline =
-  'Building full-stack products, AI systems, and developer tools.';
+  'Building AI systems, developer tools, and production software.';
 
 export const bio =
   'Computer Science student at the University of Arizona with an AI minor, with experience building production web platforms supporting 100+ university websites and software used by real customers.';
 
 // About
 export const aboutParagraphs = [
-  "I'm a Computer Science student at the University of Arizona with an AI minor, graduating May 2027. I care about building software that works in production — whether that's web platforms serving thousands of users, AI infrastructure with real evaluation guardrails, or developer tools with reproducible benchmarks.",
-  "I'm actively looking for full-time software engineering roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities. I work extensively with AI-assisted development tools including OpenAI Codex, Claude Code, and Google Antigravity.",
+  "I'm a Computer Science student at the University of Arizona with an AI minor, graduating May 2027. I care about building software that works in production — whether that's AI infrastructure with real evaluation guardrails, developer tools with reproducible benchmarks, or web platforms serving real users.",
+  "I'm actively looking for full-time software engineering and applied AI roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities.",
 ];
 
 export const location = 'Tucson, AZ';
@@ -142,16 +142,6 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    title: 'Software Development Engineering Intern',
-    company: 'FitArt Health and Wellness Pvt. Ltd.',
-    location: 'Nagpur, India',
-    period: 'May 2025 – Aug. 2025',
-    bullets: [
-      'Contributed to a live app and web marketplace spanning 70+ fitness centers, testing and improving free-trial, contact, and program-detail flows across WordPress/WooCommerce, AJAX, and API integrations.',
-      'Validated form submissions and end-to-end data flows, reproduced UI/API defects, and collaborated on fixes, contributing to a team-reported 20% reduction in reported bugs.',
-    ],
-  },
-  {
     title: 'IT Web Analyst',
     company: 'University of Arizona Information Technology Services',
     location: 'Tucson, AZ',
@@ -161,25 +151,35 @@ export const experiences: ExperienceItem[] = [
       'Audit Arizona Online degree-search links and PDF accessibility in Adobe Acrobat, repair relative-path issues, cross-check academic program records, and document unresolved exceptions in shared QA workflows.',
     ],
   },
+  {
+    title: 'Software Development Engineering Intern',
+    company: 'FitArt Health and Wellness Pvt. Ltd.',
+    location: 'Nagpur, India',
+    period: 'May 2025 – Aug. 2025',
+    bullets: [
+      'Contributed to a live app and web marketplace spanning 70+ fitness centers, testing and improving free-trial, contact, and program-detail flows across WordPress/WooCommerce, AJAX, and API integrations.',
+      'Validated form submissions and end-to-end data flows, reproduced UI/API defects, and collaborated on fixes, contributing to a team-reported 20% reduction in reported bugs.',
+    ],
+  },
 ];
 
 // Projects
 export const projects: Project[] = [
   {
     index: '01',
-    title: 'Terminal Coding Agent (TermAgent)',
+    title: 'TermAgent – Terminal Coding Agent',
     description:
       'Engineered and released a terminal coding agent that searches repositories, indexes Python/JavaScript/TypeScript symbols, previews patches, runs verification, and records token and estimated-cost telemetry in reproducible JSONL traces.',
     details:
       'Enforced repository confinement, SHA-256 planned-write checks, classified shell execution, approval modes, credential-file protections, and final-diff validation; shipped v1.0.1 with 198 passing tests and CI across Python 3.11–3.13. Built a frozen eight-task Harbor evaluation with independent graders and a matched Codex CLI baseline; measured 87% fewer input tokens, 25% lower total model cost, and 69% lower runtime while documenting completion tradeoffs and controller failure modes.',
-    result: 'v1.0.1 shipped with 198 passing tests; 87% fewer input tokens & 25% lower model cost vs Codex CLI',
+    result: '198 passing tests on v1.0.1; 87% fewer input tokens & 25% lower total cost vs Codex CLI baseline',
     tech: ['Python', 'CLI', 'Git', 'OpenAI Responses API', 'Harbor'],
     github: 'https://github.com/Rohanasudani/terminal-coding-agent',
     visual: 'terminal',
   },
   {
     index: '02',
-    title: 'Enterprise AI Model Router & Eval Platform',
+    title: 'AI Model Router & Eval Platform',
     year: '2026',
     description:
       'Built a full-stack LLM routing and evaluation platform that recommends models using task-specific quality, latency, context fit, and estimated cost, with manual overrides and budget-aware policy routing.',
@@ -214,9 +214,8 @@ export const projects: Project[] = [
 
 // Additional Projects
 export const additionalProjects = [
-  'Reinforcement Learning Agents – Snake & Gridworld (Python, NumPy, Matplotlib; Q-learning, SARSA, approximate Q-learning; 98–100% success in later-stage Snake evaluations)',
-  'Interactive Planner (CSC 335) (Java, JavaFX, MVC, JUnit; calendar/task manager with local accounts, themes, serialized persistence, save/load, and unit-tested model/controller workflows)',
-  'CSC 337 Web Programming final project',
+  'Interactive Planner (CSC 335) — Java, JavaFX, MVC, JUnit; desktop calendar/task manager with local accounts, themes, serialized persistence, save/load, and unit-tested model/controller workflows.',
+  'Reinforcement Learning Agents – Snake & Gridworld — Python, NumPy, Matplotlib; Q-learning, SARSA, and approximate Q-learning; 98–100% success in later-stage Snake evaluations.',
 ];
 
 // Skills
@@ -260,19 +259,15 @@ export const skills: SkillCategory[] = [
     category: 'DevOps & Testing',
     items: [
       'Docker',
-      'GitHub Actions/CI/CD',
-      'Git/GitHub',
-      'Linux/Bash',
+      'GitHub Actions / CI/CD',
+      'Git / GitHub',
+      'Linux / Bash',
       'Vercel',
       'Playwright',
       'pytest',
       'JUnit',
       'Accessibility QA',
     ],
-  },
-  {
-    category: 'AI-Assisted Development',
-    items: ['OpenAI Codex', 'Claude Code', 'Antigravity'],
   },
 ];
 
@@ -289,7 +284,7 @@ export const education: EducationEntry[] = [
     coursework: [
       'Machine Learning',
       'Artificial Intelligence',
-      'Object-Oriented Programming & Design (OOP)',
+      'Object-Oriented Programming & Design',
       'Systems Programming',
       'Programming Languages',
       'Computer Vision',

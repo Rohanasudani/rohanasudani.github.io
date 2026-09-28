@@ -10,7 +10,7 @@ export default function Contact() {
 
       <div className="contact-container-card">
         <p className="contact-invite">
-          I&apos;m actively seeking full-time software engineering roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities across full-stack development, AI infrastructure, and systems engineering. Whether you have an open role, an exciting technical challenge, or just want to connect, feel free to reach out.
+          I&apos;m actively seeking full-time software engineering and applied AI roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities across AI systems, developer tooling, and production software. Whether you have an open role, an exciting technical challenge, or just want to connect, feel free to reach out.
         </p>
 
         <div className="contact-methods-grid">
