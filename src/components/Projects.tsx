@@ -11,7 +11,7 @@ function TerminalWidget() {
           <span className="dot dot-green" />
         </div>
         <span className="terminal-title">termagent — zsh</span>
-        <span className="terminal-status-tag">Fixture 8/8 ✓</span>
+        <span className="terminal-status-tag">v1.0.1 (198 tests) ✓</span>
       </div>
       <div className="terminal-body">
         <div className="terminal-line prompt">
@@ -32,7 +32,7 @@ function TerminalWidget() {
         </div>
         <div className="terminal-line success">
           <span className="step-tag">[4/4]</span>
-          <span className="step-desc">Deterministic test loop: 176 automated tests &amp; 8/8 fixtures passed</span>
+          <span className="step-desc">Deterministic test loop: 198 automated tests &amp; 8/8 Harbor benchmarks passed</span>
         </div>
       </div>
     </div>

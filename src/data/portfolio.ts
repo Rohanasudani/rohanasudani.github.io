@@ -58,8 +58,8 @@ export const title = 'Software Engineer';
 // Typewriter roles
 export const roles = [
   'Software Engineer',
-  'Full-Stack Developer',
   'AI Systems Builder',
+  'Full-Stack Developer',
   'Developer Tooling Engineer',
 ];
 
@@ -89,14 +89,14 @@ export const metrics = [
     sub: 'UA ITS platform maintenance',
   },
   {
-    value: '~$82K',
+    value: '~$160K',
     label: 'Property Sales Influenced',
-    sub: '~INR 70 lakh through the digital lead channel',
+    sub: 'INR 1.5+ crore via digital channel',
   },
   {
-    value: '176/176',
+    value: '198',
     label: 'Automated Tests Passing',
-    sub: 'Terminal Agent reliability suite',
+    sub: 'Terminal Agent v1.0.1 test suite',
   },
   {
     value: '20%',
@@ -122,15 +122,23 @@ export const resumeHref = '/resume-rohan-asudani.pdf';
 // Experience
 export const experiences: ExperienceItem[] = [
   {
-    title: 'IT Web Analyst',
-    company: 'University of Arizona Information Technology Services',
+    title: 'Incoming AI Research Software Developer',
+    company: 'Arizona Online, University of Arizona',
     location: 'Tucson, AZ',
-    period: 'Mar. 2024 – Present',
+    period: 'Starts Oct. 2026',
     bullets: [
-      'Support 100+ university web properties across Arizona.edu and sites.arizona.edu, updating Drupal and WordPress sites for academic departments and resolving production content and functionality issues.',
-      'Translate client requests into documented web requirements and scoped tasks; coordinate redesigns, cloud migrations, and site changes through team checkpoints and a CRM-managed support queue.',
-      'QA-test links, responsive layouts, accessibility, and CMS changes before releases; debug front-end defects against web standards.',
-      'Use Tableau, CRM records, and internal reports to surface recurring support issues and prioritize work; write client-facing documentation and communicate status with nontechnical stakeholders.',
+      'Selected to develop an AI skills-mapping assistant for Corporate Partnerships, integrating University degree, employer, and market data to map academic outcomes to industry skill gaps.',
+      'Planned interface will recommend relevant Arizona Online degrees, translate higher-education competencies into employer language, and visualize degree-to-skill relationships through interactive network-style views.',
+    ],
+  },
+  {
+    title: 'Student Developer (Mobile Application)',
+    company: 'PawPrint Labs Inc.',
+    location: 'Tucson, AZ',
+    period: 'Sep. 2026 – Present',
+    bullets: [
+      'Leading development of the mobile capture app for a UA-founded smart-collar startup, with planned BLE pairing, session recording, and synchronization of motion, sound, light, and temperature data for real-world beta testing.',
+      'Working with the founder to turn functioning collar hardware and a proven first-cat behavior model into a low-friction owner workflow for data capture and behavior/wellbeing analysis.',
     ],
   },
   {
@@ -139,19 +147,18 @@ export const experiences: ExperienceItem[] = [
     location: 'Nagpur, India',
     period: 'May 2025 – Aug. 2025',
     bullets: [
-      "Developed and shipped app and web features for FitArt's one-membership marketplace spanning 70+ fitness centers, including center discovery, program details, free-trial inquiries, and contact flows.",
-      'Collaborated with product and engineering to design and deploy scalable backend services; integrated and validated WordPress/WooCommerce data flows, Contact Form 7 submissions, and AJAX endpoints.',
-      'Reproduced API and UI defects, debugged affected flows, and ran cross-platform regression and production-release checks, contributing to a 20% reduction in reported bugs.',
+      'Contributed to a live app and web marketplace spanning 70+ fitness centers, testing and improving free-trial, contact, and program-detail flows across WordPress/WooCommerce, AJAX, and API integrations.',
+      'Validated form submissions and end-to-end data flows, reproduced UI/API defects, and collaborated on fixes, contributing to a team-reported 20% reduction in reported bugs.',
     ],
   },
   {
-    title: 'Mobile Software Developer',
-    company: 'PawPrints',
+    title: 'IT Web Analyst',
+    company: 'University of Arizona Information Technology Services',
     location: 'Tucson, AZ',
-    period: 'Sep. 2026 – Present',
+    period: 'Mar. 2024 – Present',
     bullets: [
-      'Own mobile app development for a UA-founded smart-collar startup, designing owner-facing flows for pairing, session recording, sensor-data sync, and beta feedback.',
-      'Translate motion, sound, light, and temperature signals from the hardware/ML prototype into iOS/Android capture workflows, onboarding screens, and data models.',
+      'Maintain, build, and QA University web properties across Drupal and WordPress, handling site migrations, responsive testing, link validation, accessibility reviews, and production content/UI fixes for academic and administrative units.',
+      'Audit Arizona Online degree-search links and PDF accessibility in Adobe Acrobat, repair relative-path issues, cross-check academic program records, and document unresolved exceptions in shared QA workflows.',
     ],
   },
 ];
@@ -160,12 +167,24 @@ export const experiences: ExperienceItem[] = [
 export const projects: Project[] = [
   {
     index: '01',
-    title: 'Enterprise AI Model Router',
+    title: 'Terminal Coding Agent (TermAgent)',
+    description:
+      'Engineered and released a terminal coding agent that searches repositories, indexes Python/JavaScript/TypeScript symbols, previews patches, runs verification, and records token and estimated-cost telemetry in reproducible JSONL traces.',
+    details:
+      'Enforced repository confinement, SHA-256 planned-write checks, classified shell execution, approval modes, credential-file protections, and final-diff validation; shipped v1.0.1 with 198 passing tests and CI across Python 3.11–3.13. Built a frozen eight-task Harbor evaluation with independent graders and a matched Codex CLI baseline; measured 87% fewer input tokens, 25% lower total model cost, and 69% lower runtime while documenting completion tradeoffs and controller failure modes.',
+    result: 'v1.0.1 shipped with 198 passing tests; 87% fewer input tokens & 25% lower model cost vs Codex CLI',
+    tech: ['Python', 'CLI', 'Git', 'OpenAI Responses API', 'Harbor'],
+    github: 'https://github.com/Rohanasudani/terminal-coding-agent',
+    visual: 'terminal',
+  },
+  {
+    index: '02',
+    title: 'Enterprise AI Model Router & Eval Platform',
     year: '2026',
     description:
-      'Built and deployed an LLM evaluation and routing platform that ranks models by quality, estimated cost, latency, and context fit while enforcing team budgets and allow, block, downgrade, and escalation policies.',
+      'Built a full-stack LLM routing and evaluation platform that recommends models using task-specific quality, latency, context fit, and estimated cost, with manual overrides and budget-aware policy routing.',
     details:
-      'Implemented prompt cases, PostgreSQL evaluation history, rubric-based LLM-as-judge scoring, policy audit logs, and reproducible JSON/CSV savings reports. Secured OpenAI Responses API workflows with server-side credentials, request validation, admin authorization, rate limits, and production error redaction; added unit, build, and Playwright end-to-end CI checks.',
+      'Implemented PostgreSQL-backed prompt datasets, persisted evaluation runs, rubric-based LLM-as-judge scoring, team budgets, auditable routing decisions (allow, block, downgrade, escalate), and JSON/CSV savings exports. Deployed a public Vercel demo in mock mode; gated opt-in live OpenAI execution with server-only keys, admin checks, per-IP rate limits, payload validation, and production error redaction; CI runs 11 unit and 7 Playwright end-to-end tests.',
     result: 'Policy-aware routing, LLM-as-judge rubric scoring, budget governance & Playwright E2E CI',
     tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'OpenAI Responses API', 'Playwright'],
     github: 'https://github.com/Rohanasudani/enterprise-ai-model-router',
@@ -175,27 +194,15 @@ export const projects: Project[] = [
     imageAlt: 'Enterprise AI Model Router live dashboard interface and analytics',
   },
   {
-    index: '02',
-    title: 'Terminal Coding Agent',
-    description:
-      'Built a terminal coding agent that searches repositories, indexes Python, JavaScript, and TypeScript symbols, plans edits, previews patches, executes verification commands, and tracks token and estimated cost usage.',
-    details:
-      'Designed a tool-mediated safety layer with repository-bound file access, planned-write hashes, shell-command classification, approval modes, final-diff validation, and reproducible JSONL execution traces. Built reproducible Harbor/Terminal-Bench 2 evaluation tooling with frozen task hashes, independent graders, comparator runs, and failure analysis; validated orchestration with 176 automated tests and an 8/8 local fixture baseline.',
-    result: '176 automated tests passing and an 8/8 deterministic local fixture baseline',
-    tech: ['Python', 'CLI', 'Git', 'OpenAI Responses API'],
-    github: 'https://github.com/Rohanasudani/terminal-coding-agent',
-    visual: 'terminal',
-  },
-  {
     index: '03',
     title: 'PU Realtors Website',
     year: '2026',
     description:
-      'Co-developed a production real estate site for property discovery and buyer inquiries; the digital lead channel contributed to approximately INR 70 lakh in plot sales.',
+      'Co-developed and iteratively optimized a responsive real-estate lead-generation site whose digital channel has contributed to INR 1.5+ crore (approximately US$160K) in plot sales; built property pages, SEO content, comparisons, and WhatsApp/call conversion flows.',
     details:
-      'Structured mobile-friendly property pages, SEO content, trust details, and WhatsApp/call actions so buyers could compare projects and request a consultation or site visit.',
-    result: 'Contributed to approximately INR 70 lakh in residential plot sales via SEO & WhatsApp actions',
-    tech: ['Web Design', 'SEO', 'Lead Generation'],
+      'Developing AI-assisted lead sourcing and outbound outreach workflows to qualify prospects, organize follow-ups, and automate parts of the sales pipeline.',
+    result: 'Contributed to INR 1.5+ crore (~US$160K) in residential plot sales via SEO & WhatsApp conversion flows',
+    tech: ['Web Development', 'SEO', 'Lead Generation', 'AI Automation'],
     github: 'https://github.com/Rohanasudani/pu-realtors-website-case-study',
     githubLabel: 'Case Study ↗',
     demo: 'https://purealtors.in/',
@@ -207,45 +214,60 @@ export const projects: Project[] = [
 
 // Additional Projects
 export const additionalProjects = [
-  'CSC337 Web Programming final project',
-  'Snake/Gridworld RL (Q-learning, SARSA, approximate Q-learning; 98–100% Snake success in later runs)',
+  'Reinforcement Learning Agents – Snake & Gridworld (Python, NumPy, Matplotlib; Q-learning, SARSA, approximate Q-learning; 98–100% success in later-stage Snake evaluations)',
+  'Interactive Planner (CSC 335) (Java, JavaFX, MVC, JUnit; calendar/task manager with local accounts, themes, serialized persistence, save/load, and unit-tested model/controller workflows)',
+  'CSC 337 Web Programming final project',
 ];
 
 // Skills
 export const skills: SkillCategory[] = [
   {
     category: 'Languages',
-    items: ['Python', 'Java', 'TypeScript', 'JavaScript', 'SQL', 'HTML/CSS', 'C++'],
+    items: ['Python', 'Java', 'TypeScript', 'JavaScript', 'SQL', 'C', 'C++', 'HTML', 'CSS'],
   },
   {
-    category: 'Web & Data',
-    items: ['React', 'Next.js', 'Node.js', 'Express', 'REST APIs', 'PostgreSQL', 'Prisma', 'MongoDB', 'Drupal', 'WordPress'],
-  },
-  {
-    category: 'AI & Engineering',
+    category: 'AI/ML & LLM Systems',
     items: [
-      'LLM Evaluation',
-      'AI Agents',
-      'RAG',
-      'Reinforcement Learning',
-      'Q-learning',
-      'SARSA',
       'PyTorch',
       'Hugging Face',
+      'NumPy',
+      'Matplotlib',
+      'RAG',
+      'LLM Evaluation',
+      'AI Agents',
+      'Reinforcement Learning',
+      'OpenAI Responses API',
     ],
     highlighted: true,
   },
   {
-    category: 'DevOps & Tools',
+    category: 'Web & Data',
+    items: [
+      'React',
+      'Next.js',
+      'Node.js',
+      'Express',
+      'REST APIs',
+      'JavaFX',
+      'Prisma',
+      'PostgreSQL',
+      'MongoDB',
+      'WordPress/WooCommerce',
+      'Drupal',
+    ],
+  },
+  {
+    category: 'DevOps & Testing',
     items: [
       'Docker',
-      'CI/CD',
+      'GitHub Actions/CI/CD',
       'Git/GitHub',
       'Linux/Bash',
+      'Vercel',
       'Playwright',
-      'Tableau',
-      'CRM',
-      'Lovable',
+      'pytest',
+      'JUnit',
+      'Accessibility QA',
     ],
   },
   {
@@ -265,12 +287,11 @@ export const education: EducationEntry[] = [
     honors: ["Dean's List", 'Global Wildcat Award'],
     clubs: ['Google Developer Student Club', 'University of Arizona AI Club'],
     coursework: [
-      'Software Development',
-      'Object-Oriented Programming & Design (OOP)',
-      'Data Science',
-      'Artificial Intelligence',
-      'Systems Programming',
       'Machine Learning',
+      'Artificial Intelligence',
+      'Object-Oriented Programming & Design (OOP)',
+      'Systems Programming',
+      'Programming Languages',
       'Computer Vision',
     ],
   },
