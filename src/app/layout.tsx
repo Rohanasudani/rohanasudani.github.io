@@ -21,13 +21,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Rohan Asudani | Software Engineer',
+  title: 'Rohan Asudani | Software & Applied AI Engineer',
   description:
-    'Rohan Asudani is a Computer Science student and software engineer building full-stack products, AI systems, and developer tools.',
+    'Rohan Asudani is a Computer Science student and software engineer building AI systems, developer tools, and production software.',
   authors: [{ name: 'Rohan Asudani' }],
   keywords: [
     'Rohan Asudani',
     'Software Engineer',
+    'Applied AI Engineer',
     'AI Engineer',
     'Machine Learning Engineer',
     'Full-stack Engineer',
@@ -35,16 +36,16 @@ export const metadata: Metadata = {
   ],
   creator: 'Rohan Asudani',
   openGraph: {
-    title: 'Rohan Asudani | Software Engineer',
+    title: 'Rohan Asudani | Software & Applied AI Engineer',
     description:
-      'Software engineer building full-stack products, AI systems, and developer tools.',
+      'Software engineer building AI systems, developer tools, and production software.',
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Rohan Asudani | Software Engineer',
+    title: 'Rohan Asudani | Software & Applied AI Engineer',
     description:
-      'Software engineer building full-stack products, AI systems, and developer tools.',
+      'Software engineer building AI systems, developer tools, and production software.',
   },
   icons: { icon: '/favicon.svg' },
 };

@@ -72,7 +72,7 @@ export const bio =
 // About
 export const aboutParagraphs = [
   "I'm a Computer Science student at the University of Arizona with an AI minor, graduating May 2027. I care about building software that works in production — whether that's AI infrastructure with real evaluation guardrails, developer tools with reproducible benchmarks, or web platforms serving real users.",
-  "I'm actively looking for full-time software engineering and applied AI roles starting upon graduation in May 2027, as well as co-op, part-time, or internship opportunities.",
+  "I'm actively looking for full-time software and applied AI engineering roles starting May 2027, as well as co-op, part-time, or internship opportunities. My interests include AI infrastructure, developer tools, full-stack systems, and production software engineering.",
 ];
 
 export const location = 'Tucson, AZ';
@@ -268,6 +268,10 @@ export const skills: SkillCategory[] = [
       'JUnit',
       'Accessibility QA',
     ],
+  },
+  {
+    category: 'AI-Assisted Development',
+    items: ['OpenAI Codex', 'Claude Code', 'Antigravity'],
   },
 ];
 

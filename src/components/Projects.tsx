@@ -32,7 +32,7 @@ function TerminalWidget() {
         </div>
         <div className="terminal-line success">
           <span className="step-tag">[4/4]</span>
-          <span className="step-desc">Deterministic test loop: 198 automated tests &amp; 8/8 Harbor benchmarks passed</span>
+          <span className="step-desc">Evaluate: 8-task Harbor benchmark against matched Codex CLI baseline</span>
         </div>
       </div>
     </div>
